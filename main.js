@@ -3,7 +3,8 @@ const vue = new Vue({
     el : '#app',
     data : {
         newtodo: "",
-        todolist: []
+        todolist: [],
+        line : false,
         },
         methods: {
             addTodo() {
@@ -16,7 +17,13 @@ const vue = new Vue({
                 this.todolist.splice(index, 1)
             },
             done(event) {
-                event.currentTarget.style.textDecoration = "line-through"
+                if(!this.line) {
+                    this.line = true;
+                    event.currentTarget.style.textDecoration = "line-through";
+                } else if(this.line) {
+                    this.line = false;
+                    event.currentTarget.style.textDecoration = "none";
+                }
             }
         }
     }
