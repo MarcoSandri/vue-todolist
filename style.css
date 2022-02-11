@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #219ebc;
+}
+
+#app {
+    background-color: white;
+    padding: 3rem 5rem;
+    min-height: 30rem;
+    position: relative;
+    border-left: 0.7rem dotted #219ebc;
+    box-shadow: -5px 0px 0px 0px white;
+}
+
+@keyframes error {
+    0% {transform: translate(0px);}
+    20% {transform: translate(-3px);}
+    40% {transform: translate(3px);}
+    60% {transform: translate(-3px);}
+    80% {transform: translate(3px);}
+    100% {transform: translate(0px);}
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-top: 4rem solid #219ebc;
+    border-left: 4rem solid transparent;
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.triangleFolded {
+    width: 0;
+    height: 0;
+    border-bottom: 4rem solid white;
+    border-right: 4rem solid transparent;
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+    box-shadow: -2px 2px 2px gray;
+}
+
+.title {
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+}
+
+ul li {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 0.1rem;
+    cursor: pointer;
+}

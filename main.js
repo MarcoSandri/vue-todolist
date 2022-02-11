@@ -4,13 +4,16 @@ const vue = new Vue({
     data : {
         newtodo: "",
         todolist: [],
-        line : false,
+        line : false
         },
         methods: {
             addTodo() {
                 if(this.newtodo != "") {
                     this.todolist.push(this.newtodo);
                     this.newtodo = "";
+                } else {
+                    document.getElementById('app').style.animation = "error 500ms linear 1";
+                    setTimeout(this.removeAnimation, 500)
                 }
             },
             deleteTodo(index) {
@@ -24,6 +27,9 @@ const vue = new Vue({
                     this.line = false;
                     event.currentTarget.style.textDecoration = "none";
                 }
+            },
+            removeAnimation(){
+                document.getElementById('app').style.animation = "";
             }
         }
     }
