@@ -6,17 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/bcbf851183.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>ToDoList</title>
 </head>
 <body>
     <div class="container">
         <div id="app">
+            <!-- Folded corner -->
             <div class="triangle"></div>
             <div class="triangleFolded"></div>
-            
+            <!-- List title -->
             <h1 class="title">ToDo</h1>
-            <input type="text" v-model="newtodo" @keyup.enter="addTodo">
-            <button @click="addTodo">Add</button>
+            <!-- List commands -->
+            <div class="commands">
+                <input type="text" v-model="newtodo" @keyup.enter="addTodo" placeholder="Write here">
+                <button @click="addTodo"><i class="fa-solid fa-pen"></i></button>
+            </div>
+            <!-- TodoList -->
             <ul>
                 <li v-for="(todo, index) in todolist" @click="done($event)">
                     {{todo}}
