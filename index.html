@@ -23,8 +23,8 @@
             </div>
             <!-- TodoList -->
             <ul>
-                <li v-for="(todo, index) in todolist" @click="done($event)">
-                    {{todo}}
+                <li v-for="(todo, index) in todolist" @click="lineThrough(index)" :class="todo.line? 'done': ''">
+                    {{todo.text}}
                     <button @click="deleteTodo(index)" class="delete">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
